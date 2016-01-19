@@ -62,4 +62,3 @@ This will run CouchDB in interactive mode with the plugin loaded.
 
 Thanks to the [couch_jwt_auth](https://github.com/softapalvelin/couch_jwt_auth), [couchperuser](https://github.com/etrepum/couchperuser) and the [my-first-couchdb-plugin](https://github.com/janl/my-first-couchdb-plugin) for their examples that were invaluable.
 
-[Auth0](https://auth0.com/) is an identity service that supports many identity providers like Google, Facebook, Twitter and so on. Auth0 generates a JWT that can be parsed by this plugin. [Here](https://github.com/softapalvelin/getting-started-todo) is a sample application that uses Auth0 to authenticate a user with CouchDB.
