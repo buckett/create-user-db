@@ -2,6 +2,8 @@
 
 create_user_db is a plugin for CouchDB that allows a user to create their own database. This is useful when you're not storing your users inside the `_users` DB and so can't use the [couchperuser](https://github.com/etrepum/couchperuser) plugin which watches for changes on the `_users` DB.
 
+The name of ther user's DB will be `userdb-{hex encoded username}` this is so that there's never a problem with invalid characters in a user's name causing the creation to fail (stolen from couchperuser).
+
 ## Installation
 
 Install `rebar` if you don't already have it
