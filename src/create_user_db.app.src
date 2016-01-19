@@ -1,0 +1,9 @@
+%% -*- mode: erlang -*-
+{application, create_user_db, [
+    {description, "Registers and endpoint for users to create their own DB."},
+    {vsn, "0.0.0"},
+    {modules, []},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []}
+]}.
