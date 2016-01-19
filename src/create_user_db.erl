@@ -4,7 +4,7 @@
 
 -include_lib("couch/include/couch_db.hrl").
 
-handle_req(#httpd{method='GET'}=Req) ->
+handle_req(#httpd{method='PUT'}=Req) ->
     case Req#httpd.user_ctx#user_ctx.name of
         null ->
             couch_httpd:send_error(Req, {unauthorized, "You must be authenticated to create DB"});
@@ -24,7 +24,7 @@ handle_req(#httpd{method='GET'}=Req) ->
     end;
 
 handle_req(Req) ->
-    couch_httpd:send_method_not_allowed(Req, "GET").
+    couch_httpd:send_method_not_allowed(Req, "PUT").
 
 admin_ctx() ->
     {user_ctx, #user_ctx{roles=[<<"_admin">>]}}.

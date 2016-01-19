@@ -35,12 +35,12 @@ Restart couchdb
 
 ## Test with Curl
 
-    $ curl http://127.0.0.1:5984/_create_user_db
+    $ curl -X PUT http://127.0.0.1:5984/_create_user_db
 
 You should see an error stating you need to login as it' can't create a user DB when there's no user. If you supply some credentials then it should create your database.
 
 
-    $ curl -u admin http://127.0.0.1:5984/_create_user_db
+    $ curl -X PUT -u admin http://127.0.0.1:5984/_create_user_db
     Enter host password for user 'admin':
     {"db":"userdb-61646d696e"}
 
