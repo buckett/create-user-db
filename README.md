@@ -51,6 +51,23 @@ Repeatedly requesting this URL shouldn't cause any problems and will just return
 
 This is useful when allowing per user databases with the [JWT](https://github.com/softapalvelin/couch_jwt_auth) authentication plugin so that each user can create their own DB.
 
+
+## Configuration
+
+If you don't want all your DBs prefixed with `userdb-` you can configure the allowed prefixes clients can create with a config section:
+
+    [create_user_db]
+    ; The allowed user DB prefixes, can allow users to create a number of DBs
+    allowed = ["people", "pets"]
+    ; The default DB to create if one isn't supplied
+    default = people
+
+This allows clients to create a DB with a name of `people-{HEX username}` or `cats-{HEX username}`. The DB to create should be specified as the second part fo the URL:
+
+    $ curl -u admin -X PUT http://localhost:5984/_create_user_db/people
+    Enter host password for user 'admin':
+    {"db":"people-61646d696e"}
+
 ## Development
 
     $ make dev
